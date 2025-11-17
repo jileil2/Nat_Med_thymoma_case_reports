@@ -4,7 +4,6 @@ _A Systematic Review and Statistical Analysis (BMJ submission)_
 This repository contains the analysis code and figure/table generation scripts accompanying the manuscript  
 **“Striational Antibody-Associated Myositis – Bridging the Gap between Thymoma and Myasthenia Gravis: A Systematic Review and Statistical Analysis.”**
 
-> **Note:** The analytic dataset is not publicly available. Access can be requested (see **Data Access** below).  
 > All code is included to ensure reproducibility once the data are available locally.
 
 ---
@@ -133,17 +132,7 @@ The dataset is available upon request for research purposes.
 
 ## Questions & Support
 
-- **Code and reproducibility:** [jileil2@gwmail.gwu.edu](mailto:jileil2@gwmail.gwu.edu)  
-- **Data requests:** [luoj1129@gmail.com](mailto:luoj1129@gmail.com)
-
----
-
-## Citation
-
-If you use this code or build upon the analyses, please cite:
-
-> *Striational Antibody-Associated Myositis – Bridging the Gap between Thymoma and Myasthenia Gravis: A Systematic Review and Statistical Analysis.*  
-> (Submitted to **BMJ**)
+- [luoj1129@gmail.com](mailto:luoj1129@gmail.com)
 
 ---
 
