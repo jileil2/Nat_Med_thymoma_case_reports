@@ -1,10 +1,10 @@
 # Striational Antibody-Associated Myositis – Bridging the Gap between Thymoma and Myasthenia Gravis  
-_A Systematic Review and Statistical Analysis (BMJ submission)_
+_A Systematic Review and Statistical Analysis (Nature Medicine submission)_
 
-This repository contains the analysis code and figure/table generation scripts accompanying the manuscript  
-**“Striational Antibody-Associated Myositis – Bridging the Gap between Thymoma and Myasthenia Gravis: A Systematic Review and Statistical Analysis.”**
+This repository contains the analysis code and figure-generation scripts accompanying the manuscript  
+**Striational Antibody-Associated Myositis – Bridging the Gap between Thymoma and Myasthenia Gravis**.
 
-> All code is included to ensure reproducibility once the data are available locally.
+All code is provided to support transparency and reproducibility once the data are available locally.
 
 ---
 
@@ -12,131 +12,130 @@ This repository contains the analysis code and figure/table generation scripts a
 
 ```
 .
-├── figures/
-│   ├── figure_S1/
-│   │   ├── figure_S1.R        # Reproduces Figure S1 interactively
-│   │   ├── figure_S1.tex      # Combines sub-figures into one panel
-│   │   └── tex/               # LaTeX files for individual sub-figures
-│   ├── figure_2/
-│   ├── figure_3/
-│   ├── figure_4/
-│   ├── figure_5/
-│   ├── figure_6/
-│   └── figure_7/
+├── Concomitant IIM and MG/
+│   ├── data1.csv          # Dataset for concomitant IIM and MG
+│   └── data1.R            # Analysis script (Panel A)
 │
-├── tables/
-│   ├── data_dictionary.pdf    # Variable definitions
-│   ├── data1.csv              # Concomitant IIM and MG
-│   ├── data2.csv              # ICI-Induced IIM and/or MG
-│   ├── data3.csv              # Isolated IIM with TET
-│   ├── data4.csv              # Thymoma spontaneous regression
-│   ├── table_1/–table_4/      # Analyses for Tables 1–4
+├── Isolated IIM with TET/
+│   ├── data3.csv          # Dataset for isolated IIM with thymectomy
+│   └── data3.R            # Analysis script (Panel B)
 │
-├── README.md
-└── (optional) renv/ or environment files
+├── Thymoma spontaneous regression/
+│   ├── data4.csv          # Dataset for thymoma spontaneous regression
+│   └── data4.R            # Analysis script (Panel C)
+│
+├── ICI-Induced IIM and/or MG/
+│   ├── data2.csv          # Dataset for ICI-induced IIM and/or MG
+│   └── data2.R            # Analysis script (Panel D)
+│
+├── Figures/
+│   ├── Figure 1/
+│   ├── Figure 2/
+│   ├── Figure 3/
+│   ├── Extended Data Figure 2/
+│   ├── Extended Data Figure 3/
+│   ├── Extended Data Figure 4/
+│   └── Supplementary Figure 2/
+│
+├── Data Dictionary.pdf    # Variable definitions and coding
+└── README.md
 ```
 
 ---
 
 ## How to Reproduce Results
 
-All scripts are intended to be run **line by line in R**, not as batch jobs.  
-The R scripts do **not** create intermediate files; instead, they display tables and plots interactively.  
+All R scripts are intended to be run **interactively, line by line**, rather than as batch jobs.  
+Scripts do **not** write intermediate output files; tables and figures are displayed in the R session.  
 Inline comments indicate which code blocks correspond to specific manuscript results.
 
 ---
 
-### 1. Figures (Figure S1, Figures 2–7)
+## 1. Cohort-Specific Analyses (Panels A–D)
 
-Each folder `figures/figure_*` contains:
-- **`figure_*.R`** — R code for statistical analysis and visualization (run line by line).  
-- **`figure_*.tex`** — LaTeX file that arranges multiple sub-figures into one composite figure.  
-- **`tex/` subfolder** — LaTeX sources for each sub-figure (e.g., individual panels).
+Each cohort folder corresponds to one clinical scenario in the manuscript:
 
-#### Workflow
+| Folder | Description |
+|------|-------------|
+| `Concomitant IIM and MG/` | Concomitant inflammatory myopathy and myasthenia gravis |
+| `Isolated IIM with TET/` | Isolated IIM following thymectomy |
+| `Thymoma spontaneous regression/` | Thymoma spontaneous regression cases |
+| `ICI-Induced IIM and/or MG/` | Immune checkpoint inhibitor–induced IIM and/or MG |
 
-1. **Run the R script line by line** in R to view analyses and plots.  
-2. **Compile all `.tex` files** in the `tex/` subfolder to generate sub-figure PDFs.  
-3. **Move or copy** the resulting PDFs into the same directory as `figure_*.tex`.  
-4. **Compile** the main `figure_*.tex` to assemble the final composite figure.
+### Workflow
 
-```bash
-# Example: Figure 2
-Rscript figures/figure_2/figure_2.R
-
-# Compile sub-figures
-pdflatex figures/figure_2/tex/*.tex
-
-# Move sub-figure PDFs next to figure_2.tex
-mv figures/figure_2/tex/*.pdf figures/figure_2/
-
-# Compile composite panel
-pdflatex figures/figure_2/figure_2.tex
-# or
-latexmk -pdf figures/figure_2/figure_2.tex
-```
-
-Repeat for `figure_S1`, `figure_3`, …, `figure_7`.
-
----
-
-### 2. Tables (Analyses for data1–data4)
-
-Each folder `tables/table_k/` (for k = 1,…,4) contains R scripts that replicate the analyses for Tables 1–4.  
-Execute each script **line by line** in R.  
-Comments in the scripts indicate which code segments correspond to specific reported results.
-
----
-
-### 3. Working Directory Setup
-
-Before running any R script, set your working directory to where both the **data** and the **script** are located.
+1. Open the corresponding `.R` file in R or RStudio  
+2. Set the working directory to the folder containing the script and data  
+3. Run the script **line by line**
 
 ```r
 # Example
-setwd("/path/to/tables/table_1")
+setwd("/path/to/Concomitant IIM and MG/")
 ```
 
-Or, in RStudio:
+Comments in each script indicate which analyses correspond to reported results.
 
+---
+
+## 2. Figures
+
+The `Figures/` directory contains all code and LaTeX components for generating manuscript figures.
+
+Each figure folder typically contains:
+- an R script for analysis and plotting
+- a main `.tex` file assembling the full figure
+- (if applicable) a `tex/` subfolder with panel-level LaTeX sources
+
+### Figure compilation workflow
+
+```bash
+# Example: Figure 1
+Rscript "Figures/Figure 1/Figure 1.R"
+
+# Compile sub-panels (if applicable)
+pdflatex Figures/Figure\ 1/tex/*.tex
+
+# Compile composite figure
+latexmk -pdf Figures/Figure\ 1/Figure\ 1.tex
 ```
-Session → Set Working Directory → To Source File Location
-```
+
+Repeat for Extended Data and Supplementary Figures as needed.
 
 ---
 
 ## Software Requirements
 
-- **R** (version ≥ 4.0)  
-- Common R packages listed in `library(...)` calls at the top of each `.R` file  
-- (Optional) **renv** for reproducible environments:
-  ```r
-  install.packages("renv")
-  renv::restore()
-  ```
-- **LaTeX** distribution (TeX Live or MiKTeX) with `pdflatex` or `latexmk` for compiling figures
+- **R** (version ≥ 4.0)
+- R packages listed in `library(...)` calls within each `.R` file
+- **LaTeX** distribution (TeX Live or MiKTeX) with `pdflatex` or `latexmk`
+
+(Optional) For reproducible environments:
+```r
+install.packages("renv")
+renv::restore()
+```
 
 ---
 
 ## Data Access
 
-The dataset is available upon request for research purposes.
+The datasets are available upon reasonable request for research purposes.
 
-- **Data queries:** [luoj1129@gmail.com](mailto:luoj1129@gmail.com)  
-  Include the manuscript title and a short description of intended use.
+- **Data contact:** [luoj1129@gmail.com](mailto:luoj1129@gmail.com)  
+  Please include the manuscript title and a brief description of intended use.
 
-> Some scripts will not run to completion without the data files (`tables/data1.csv`–`data4.csv`).  
-> See `data_dictionary.pdf` for variable definitions and coding details.
+Refer to **Data Dictionary.pdf** for variable definitions and coding details.
 
 ---
 
 ## Questions & Support
 
-- [luoj1129@gmail.com](mailto:luoj1129@gmail.com)
+For questions regarding code or analyses:  
+📧 [luoj1129@gmail.com](mailto:luoj1129@gmail.com)
 
 ---
 
 ## Disclaimer
 
-This repository is provided for academic and research use.  
-Results may change as the manuscript undergoes peer review and revision.
+This repository is provided for academic and research use only.  
+Results and analyses may evolve as the manuscript undergoes peer review.
