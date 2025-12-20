@@ -93,7 +93,7 @@ base_data |>
   forestplot(labeltext = c(variable, propp, propn, OR, pvs),
              align = c("l", "c", "c", "c", "c"),     # <-- Align columns
              xlim = c(0, 25),
-             title = expression(bold("\\large A. Thymoma")),
+             title = expression(bold("\\large a. Thymoma")),
              xlab = expression(bold("\\Large Association with thymoma versus no thymoma")),
              xlog = TRUE,
              boxsize = 0.35,
@@ -225,7 +225,7 @@ base_data |>
   forestplot(labeltext = c(variable, propp, propn, OR, pvs),
              align = c("l", "c", "c", "c", "c"),     # <-- Align columns
              xlim = c(0, 50),
-             title = expression(bold("\\large B. Myocarditis")),
+             title = expression(bold("\\large b. Myocarditis")),
              xlab = expression(bold("\\Large Association with myocarditis versus no myocarditis")),
              xlog = TRUE,
              boxsize = .35,

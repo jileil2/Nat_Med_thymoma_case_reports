@@ -26,7 +26,7 @@ ggplot(df, aes(x = Age)) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = expression(bold("Age at MG Onset (a-c)"))
+    title = expression(bold("a. Age at MG Onset"))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -36,7 +36,7 @@ ggplot(df, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),       # Bigger tick labels
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
@@ -54,7 +54,7 @@ ggplot(df_female, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = expression(bold(""))
+    title = expression(bold("b."))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -64,7 +64,7 @@ ggplot(df_female, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),       # Larger tick labels
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),  # Thick box around plot
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
@@ -83,7 +83,7 @@ ggplot(df_male, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = expression(bold(""))
+    title = expression(bold("c."))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -111,7 +111,7 @@ ggplot(df, aes(x = Age)) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = "Age at Myositis Onset (d-f)"
+    title = "d. Age at Myositis Onset"
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -121,7 +121,7 @@ ggplot(df, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
@@ -141,7 +141,7 @@ ggplot(df_female, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = ""
+    title = "e."
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -151,7 +151,7 @@ ggplot(df_female, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
@@ -170,7 +170,7 @@ ggplot(df_male, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = ""
+    title = "f."
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -180,7 +180,7 @@ ggplot(df_male, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
