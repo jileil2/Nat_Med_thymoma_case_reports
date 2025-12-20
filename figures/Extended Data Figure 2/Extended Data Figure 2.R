@@ -1,4 +1,5 @@
 ##################### set working directory
+##################### change working directory to where the data live
 setwd("/Users/jileilin/Desktop/Research/thymomal case reports/")
 
 ##################### load packages
@@ -7,12 +8,13 @@ library('nnet')
 library('quantreg')
 library('multcomp')
 library('forestplot')
+library('ggplot2')
 
 #################### read data
 data <- read.csv('data1.csv')[, -1]
 
 #################### Age at MG Onset 
-df <- with(data, data.frame(Age = na.omit(Age)))
+df <- with(data, data.frame(Age = na.omit(Age.MG)))
 
 ggplot(df, aes(x = Age)) +
   geom_histogram(
@@ -24,7 +26,7 @@ ggplot(df, aes(x = Age)) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = expression(bold("Age at MG Onset"))
+    title = expression(bold("Age at MG Onset (a-c)"))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -40,7 +42,7 @@ ggplot(df, aes(x = Age)) +
   )
 
 #################### Age at MG Onset (Female)
-df_female <- with(data, data.frame(Age = na.omit(Age[Sex == "F"])))
+df_female <- with(data, data.frame(Age = na.omit(Age.MG[Sex == "F"])))
 
 ggplot(df_female, aes(x = Age)) +
   geom_histogram(
@@ -52,7 +54,7 @@ ggplot(df_female, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = expression(bold("Age at MG Onset"))
+    title = expression(bold(""))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -67,10 +69,9 @@ ggplot(df_female, aes(x = Age)) +
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
 
-dev.off()
 
 #################### Age at MG Onset (Male)
-df_male <- with(data, data.frame(Age = na.omit(Age[Sex == "M"])))
+df_male <- with(data, data.frame(Age = na.omit(Age.MG[Sex == "M"])))
 
 ggplot(df_male, aes(x = Age)) +
   geom_histogram(
@@ -82,7 +83,7 @@ ggplot(df_male, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = expression(bold("Age at MG Onset"))
+    title = expression(bold(""))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -98,7 +99,7 @@ ggplot(df_male, aes(x = Age)) +
   )
 
 #################### Age at Myositis Onset
-df <- with(data, data.frame(Age = na.omit(Age)))
+df <- with(data, data.frame(Age = na.omit(Age.MY)))
 
 ggplot(df, aes(x = Age)) +
   geom_histogram(
@@ -110,7 +111,7 @@ ggplot(df, aes(x = Age)) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = "Age at Myositis Onset"
+    title = "Age at Myositis Onset (d-f)"
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -128,7 +129,7 @@ ggplot(df, aes(x = Age)) +
 dev.off()
 
 ##################### Age at Myositis Onset (Female)
-df_female <- with(data, data.frame(Age = na.omit(Age[Sex == "F"])))
+df_female <- with(data, data.frame(Age = na.omit(Age.MY[Sex == "F"])))
 
 ggplot(df_female, aes(x = Age)) +
   geom_histogram(
@@ -140,7 +141,7 @@ ggplot(df_female, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = "Age at Myositis Onset"
+    title = ""
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -154,11 +155,9 @@ ggplot(df_female, aes(x = Age)) +
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
-dev.off()
-
 
 ##################### Age at Myositis Onset (Male)
-df_male <- with(data, data.frame(Age = na.omit(Age[Sex == "M"])))
+df_male <- with(data, data.frame(Age = na.omit(Age.MY[Sex == "M"])))
 
 ggplot(df_male, aes(x = Age)) +
   geom_histogram(
@@ -167,10 +166,11 @@ ggplot(df_male, aes(x = Age)) +
     color = "deepskyblue",
     size = 2
   ) +
+  scale_x_continuous(limits = c(0, 100)) + 
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = "Age at Myositis Onset"
+    title = ""
   ) +
   theme_minimal(base_size = 16) +
   theme(

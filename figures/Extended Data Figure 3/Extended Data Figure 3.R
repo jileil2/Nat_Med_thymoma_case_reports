@@ -75,7 +75,7 @@ base_data |>
   forestplot(labeltext = c(variable, prop, OR, pvs),
              align = c("l", "c", "c", "c"),     # <-- Align columns
              xlim = c(0, 12),
-             title = expression(bold("Sex (overall female proportion: 176/489, 36%)")),
+             title = expression(bold("a. Sex (overall female proportion: 176/489, 36%)")),
              xlab = expression(bold("Association with female versus male")),
              xlog = TRUE,
              boxsize = 0.35,
@@ -163,7 +163,7 @@ p_age <- ggplot(df_plot, aes(x = group, y = age)) +
   scale_color_manual(values = cols) +
   geom_text(data = pval_df, aes(x = group, y = y, label = label), vjust = 0) +
   scale_x_discrete(labels = x_labs) +
-  labs(x = "", y = "Age (year)", title = "Age") +
+  labs(x = "", y = "Age (year)", title = "b. Age") +
   theme_bw() +
   theme(
     legend.position = "none",
@@ -246,7 +246,7 @@ base_data |>
   forestplot(labeltext = c(variable, prop, OR, pvs),
              align = c("l", "c", "c", "c"),     # <-- Align columns
              xlim = c(0, 12),
-             title = expression(bold("ICI therapy (overall prevalence of ICI monotherapy: 399/491, 81\\%)")),
+             title = expression(bold("c. ICI therapy (overall prevalence of ICI monotherapy: 399/491, 81\\%)")),
              xlab = expression(bold("Association with ICI Monotherapy versus ICI combination therapy"))
              ,
              xlog = TRUE,
