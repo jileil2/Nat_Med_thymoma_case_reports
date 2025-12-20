@@ -93,7 +93,7 @@ ggplot(df_male, aes(x = Age)) +
     axis.text = element_text(color = "black", size = 17),
     axis.title.x = element_text(color = "black", face = "bold", size = 18),
     axis.title.y = element_text(color = "black", face = "bold", size = 18),
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0, face = "bold", size = 18),
     panel.border = element_rect(color = "black", fill = NA, size = 3),
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
