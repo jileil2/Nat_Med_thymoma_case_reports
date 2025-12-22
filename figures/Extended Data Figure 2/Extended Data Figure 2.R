@@ -21,12 +21,12 @@ ggplot(df, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "black",
-    size = 2
+    linewidth = 1.5
   ) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = expression(bold("a. Age at MG Onset"))
+    title = expression(bold("Age at MG Onset"))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -49,12 +49,12 @@ ggplot(df_female, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "magenta",   # Match base R border color
-    size = 2             # Border thickness
+    linewidth = 1.5
   ) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = expression(bold("b."))
+    title = expression(bold(""))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -78,12 +78,12 @@ ggplot(df_male, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "deepskyblue",   # Match base R border color
-    size = 2                 # Border thickness
+    linewidth = 1.5
   ) +
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = expression(bold("c."))
+    title = expression(bold(""))
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -106,12 +106,12 @@ ggplot(df, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "black",
-    size = 2
+    linewidth = 1.5
   ) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = "d. Age at Myositis Onset"
+    title = "Age at Myositis Onset"
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -126,7 +126,6 @@ ggplot(df, aes(x = Age)) +
     plot.margin = margin(t = 10, r = 30, b = 10, l = 10)
   )
 
-dev.off()
 
 ##################### Age at Myositis Onset (Female)
 df_female <- with(data, data.frame(Age = na.omit(Age.MY[Sex == "F"])))
@@ -136,12 +135,12 @@ ggplot(df_female, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "magenta",
-    size = 2
+    linewidth = 1.5
   ) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = "e."
+    title = ""
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -164,13 +163,13 @@ ggplot(df_male, aes(x = Age)) +
     binwidth = 10,
     fill = "white",
     color = "deepskyblue",
-    size = 2
+    linewidth = 1.5
   ) +
   scale_x_continuous(limits = c(0, 100)) + 
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = "f."
+    title = ""
   ) +
   theme_minimal(base_size = 16) +
   theme(
