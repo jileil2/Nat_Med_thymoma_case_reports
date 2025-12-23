@@ -114,7 +114,7 @@ ggplot(df, aes(x = Age)) +
   labs(
     x = expression(bold("Age (All, N = 191)")),
     y = "Frequency",
-    title = "Age at Myositis Onset"
+    title = expression(bold("Age at Myositis Onset"))
   ) +
   coord_cartesian(ylim = c(0, 55)) + 
   theme_minimal(base_size = 16) +
@@ -144,7 +144,7 @@ ggplot(df_female, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Female, N = 115)")),
     y = "Frequency",
-    title = ""
+    title = expression(bold(""))
   ) +
   coord_cartesian(ylim = c(0, 30)) + 
   theme_minimal(base_size = 16) +
@@ -175,7 +175,7 @@ ggplot(df_male, aes(x = Age)) +
   labs(
     x = expression(bold("Age (Male, N = 76)")),
     y = "Frequency",
-    title = ""
+    title = expression(bold(""))
   ) +
   theme_minimal(base_size = 16) +
   theme(
